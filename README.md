@@ -1,7 +1,10 @@
 # Lets Practice Python
+
 ## Hello 
 
-**Bold Text** *Italic Text*
+**Bold Text**
+
+*Italic Text*
 
 Example for Normal Text
 
