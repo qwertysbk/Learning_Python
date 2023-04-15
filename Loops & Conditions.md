@@ -1,6 +1,7 @@
 ## Conditional Statements in Python
 
-Conditional statements in Python allow you to control the flow of your program based on certain conditions. These statements are used to execute certain statements only if a particular condition is satisfied.
+Conditional statements in Python allow you to control the flow of your program based on certain conditions.
+These statements are used to execute certain statements only if a particular condition is satisfied.
 
 ### If Statement
 
