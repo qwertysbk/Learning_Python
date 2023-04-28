@@ -84,6 +84,23 @@ result2 = string1.upper()
 # Output: HELLO, WORLD!
 ```
 
+#### replace()
+This `replace()` method returns a copy of the string with all occurrences
+of a substring replaced with another substring.
+```python
+text = "hello world"
+print(text.replace("world", "python"))
+#Output: hello python
+```
+
+#### capitalize()
+This `capitalize()` method returns a copy of the string with its first character
+capitalized and the rest of the characters in lowercase.
+```python
+text = "hello world"
+print(text.capitalize())
+# Output: Hello world
+```
 #### split()
 The `split()` method splits a string into a list of substrings based on a specified separator:
 ```python
