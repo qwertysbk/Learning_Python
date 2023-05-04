@@ -23,7 +23,7 @@ y = []
 for i in x:
     if i.isalpha():
         index = a.index(i)
-        j = (index + 5) % 26
+        j = (index + 5) % 52
         y.append(a[j])
     else:
         y.append(i)
