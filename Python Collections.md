@@ -673,3 +673,224 @@ print(x)
 ```py
 myset = {"apple", "banana", "cherry"}
 ```
+Sets are used to store multiple items in a single variable.  
+Set items are `unordered`, `unchangeable`, and `do not allow duplicate values` ,but you can remove items and add new items.  
+Sets are written with curly brackets `{ }`.
+```py
+# Example : Create a Set:
+s = {"apple", "banana", "cherry"}
+print(s)
+
+#Output : {'apple', 'cherry', 'banana'}
+```
+
+#### Unordered
+Unordered means that the items in a set do not have a defined order therefore they cannot be referred to by index or key.
+
+#### Unchangeable
+Once a set is created, you cannot change its items, but you can remove items and add new items.
+
+#### Duplicates Not Allowed
+Sets cannot have two items with the same value.
+```py
+# Example : Duplicate values will be ignored:
+s = {"apple", "banana", "cherry", "apple"}
+print(s)
+
+#output : {'banana', 'cherry', 'apple'}
+
+# Example : True and 1 is considered the same value:
+s1 = {"apple", "banana", "cherry", True, 1, 2}
+print(s1)
+
+#output : {True, 2, 'banana', 'cherry', 'apple'}
+```
+
+#### Length of a Set
+To determine how many items a set has, use the `len()` function.
+```py
+# Example : Get the number of items in a set:
+s1 = {"apple", "banana", "cherry"}
+print(len(s1))
+
+#Output : 3
+```
+#### Set Items - Data Types
+Set items can be of any data type:
+```py
+# Example : String, int and boolean data types:
+set1 = {"apple", "banana", "cherry"}
+set2 = {1, 5, 7, 9, 3}
+set3 = {True, False, False}
+set4 = {"abc", 34, True, 40, "male"}   #A set can contain different data types
+print(set1)
+print(set2)
+print(set3)
+print(set4)
+
+"""
+Output :
+{'apple', 'banana', 'cherry'}
+{1, 3, 5, 7, 9}
+{False, True}
+{True, 34, 'abc', 40, 'male'}
+"""
+```
+
+From Python's perspective, sets are defined as objects with the data type : `<class 'set'>`
+```py
+# Example : What is the data type of a set?
+myset = {"apple", "banana", "cherry"}
+print(type(myset))
+
+#Output : <class 'set'>
+```
+
+#### `set()` Constructor
+It is also possible to use the `set()` constructor to make a set.
+```py
+# Example : Using the set() constructor to make a set:
+s = set(("apple", "banana", "cherry")) # note the double round-brackets
+print(s)
+
+#Output : {'apple', 'banana', 'cherry'}
+```
+
+#### Access Items
+You cannot access items in a set by referring to an index or a key.  
+But you can loop through the set items using a for loop, or ask if a specified value is present in a set, by using the `in` keyword.
+```py
+# Example : Loop through the set, and print the values:
+s = {"apple", "banana", "cherry"}
+for x in s:
+  print(x)
+
+"""
+Output : 
+banana
+cherry
+apple
+"""
+
+# Example : Check if "banana" is present in the set:
+s1 = {"apple", "banana", "cherry"}
+print("banana" in s1)
+
+#Output : True
+```
+
+#### Set Methods
+
+- `add()`	Adds an element to the set  
+```py
+# Example : Add an item to a set, using the add() method:
+s = {"apple", "banana", "cherry"}
+s.add("orange")
+print(s)
+
+#Output : {'banana', 'apple', 'cherry', 'orange'}
+```
+
+- `clear()`	Removes all the elements from the set  
+```py
+s = {"apple", "banana", "cherry"}
+s.clear()
+print(s)
+
+#Output : set()
+```
+
+- `discard()`	Remove the specified item  
+```py
+#If the item to remove does not exist, discard() will NOT raise an error.
+# Example : Remove "banana" by using the discard() method:
+s = {"apple", "mango", "cherry"}
+s.discard("banana")
+print(s)
+
+#Output : {'cherry', 'apple', 'mango'}
+```
+
+- `pop()`	Removes an element from the set  
+```py
+# Example : Remove a random item by using the pop() method:
+s = {"apple", "banana", "cherry"}
+x = s.pop()   #The return value of the pop() method is the removed item.
+print(x)
+print(s)
+
+"""
+Output :
+banana
+{'apple', 'cherry'}
+"""
+```
+
+- `remove()`	Removes the specified element  
+```py
+# Example : Remove "banana" by using the remove() method:
+s = {"apple", "banana", "cherry"}
+s.remove("banana")
+print(s)
+
+#Output :{'apple', 'cherry'}
+
+#If the item to remove does not exist, remove() will raise an error.
+# Example : Remove "banana" by using the remove() method:
+s = {"apple", "mango", "cherry"}
+s.remove("banana")
+print(s)
+
+#Output : Error
+```
+
+- `union()`	Return a set containing the union of sets  
+```py
+# Example :
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+set3 = set1.union(set2)
+print(set3)
+
+#Output : {'c', 1, 2, 3, 'a', 'b'}
+```
+
+- `update()`	Update the set with the union of this set and others  
+```py
+# Example : Add elements from x into s:
+s = {"apple", "banana", "cherry"}
+x = {"pineapple", "mango", "papaya"}
+s.update(x)
+print(s)
+
+#Output : {'banana', 'papaya', 'mango', 'pineapple', 'cherry', 'apple'}
+
+# Example : Add elements of a list to at set:
+s = {"apple", "banana", "cherry"}
+x = ["kiwi", "orange"]  
+s.update(x)    #The object in the update() method can be any iterable object (tuples, lists, dictionaries etc.)
+print(s)
+
+#Output : {'orange', 'cherry', 'kiwi', 'banana', 'apple'}
+```
+
+- `del` will delete the set completely  
+```py
+# Example :
+s = {"apple", "banana", "cherry"}
+del s
+print(s)
+
+#Output : Deletes the set s
+```
+
+- `intersection()` will return a new set, that only contains the items that are present in both sets.  
+```py
+# Example : Return a set that contains the items that exist in both set x, and set y:
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+z = x.intersection(y)
+print(z)
+
+#Output : {'apple'}
+```
