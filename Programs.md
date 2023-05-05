@@ -63,3 +63,60 @@ while True:
     if y == "0":
         break
 ```
+
+- Login System
+```py
+# Simple Login System
+x={}
+
+def menu():
+    y=str(input("\n Do you already have an Account ? (Y/N) : "))
+    while True:
+        if(y.upper() == "Y"):
+            old()
+            break
+        elif(y.upper() == "N"):
+            i=str(input("\n Do you want to Create an Account ? (Y/N) : "))
+            if i.upper()=="Y":
+                new()
+                break
+            else:
+                print("Thanks for Checking the Portal")
+                exit()
+        else:
+            print("\n Enter a valid answer -- (Y/N) :")
+
+def old():
+    a=str(input("Enter Account Name : "))
+    b=str(input("Enter Password : "))
+    c=0
+    while c < 5:
+        if a in x and x[a]== b:
+            print("\n Login Successful !!!")
+            return
+        else:
+            c+=1
+            print("Enter Correct Account Name and Password")
+            a=str(input("Enter Account Name : "))
+            b=str(input("Enter Password : "))
+    print("\n Too many Trials , Closing the Login Portal")
+    exit()
+    
+def new():
+    a=str(input("Enter Account Name : "))
+    b=str(input("Enter Password : "))
+    c=str(input("Confirm Password : "))
+    while a in x:
+        a=str(input("User Name already exists , Please Enter a New User Name :"))
+    while c!=b:
+        c=str(input("Enter Correct Password to Confirm :"))
+    if c==b:
+        x[a]=b
+        print("\n Account Successfully Created !!!")    
+    
+while True:
+    menu()
+    z=str(input("\n Do you want to continue ? (Y/N) : "))
+    if(z.upper() == "N"):
+        exit()
+```
