@@ -894,3 +894,284 @@ print(z)
 
 #Output : {'apple'}
 ```
+
+
+## Python Dictionaries
+```py
+mydict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+```
+Dictionaries are used to store data values in `key:value` pairs.
+It is a collection which is `ordered`, `changeable` and `do not allow duplicates`.
+Dictionaries are written with curly brackets `{ }`.
+```py
+# Example : Create and print a dictionary:
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(d)
+
+#Output : {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+```
+
+#### Dictionary Items
+Dictionary items are presented in key:value pairs, and can be referred to by using the `key name`.
+```py
+# Example : Print the "brand" value of the dictionary:
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(d["brand"])
+
+#Output : Ford
+```
+
+#### Ordered
+When we say that dictionaries are ordered, it means that the items have a defined order, and that order will not change.
+
+#### Unordered
+Unordered means that the items does not have a defined order, you cannot refer to an item by using an index.
+
+#### Changeable
+Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has been created.
+
+#### Duplicates Not Allowed
+Dictionaries cannot have two items with the same key.
+```py
+# Example : Duplicate values will overwrite existing values:
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(d)
+
+#Output : {'brand': 'Ford', 'model': 'Mustang', 'year': 2020}
+```
+
+#### Dictionary Length
+To determine how many items a dictionary has, use the `len()` function:
+```py
+# Example : Print the number of items in the dictionary:
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(len(d))
+
+#Output : 3
+```
+
+#### Dictionary Items - Data Types
+The values in dictionary items can be of any data type:
+```py
+# Example : String, int, boolean, and list data types:
+d = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+print(type(d))
+
+#Output :<class 'dict'>
+```
+
+From Python's perspective, dictionaries are defined as objects with the data type :`<class 'dict'>`
+
+#### dict() Constructor
+It is also possible to use the `dict()` constructor to make a dictionary.
+```py
+# Example : Using the dict() method to make a dictionary:
+d = dict(name = "John", age = 36, country = "Norway")
+print(d)
+
+#Output : {'name': 'John', 'age': 36, 'country': 'Norway'}
+```
+
+
+
+#### Accessing Items
+You can access the items of a dictionary by referring to its key name, inside square brackets `[ ]`:
+```py
+# Example : Get the value of the "model" key:
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = d["model"]
+
+#Output : Mustang
+```
+
+#### Check if Key Exists
+To determine if a specified key is present in a dictionary use the `in` keyword:
+```py
+# Example : Check if "model" is present in the dictionary:
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+if "model" in d:
+  print("Yes, 'model' is one of the keys in the thisdict dictionary")
+
+# Output : Yes, 'model' is one of the keys in the thisdict dictionary
+```
+
+Change Values
+You can change the value of a specific item by referring to its key name:
+```py
+#Example : Change the "year" to 2018:
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+d["year"] = 2018
+print(d)
+
+#Output : {'brand': 'Ford', 'model': 'Mustang', 'year': 2018}
+```
+
+#### Adding Items
+Adding an item to the dictionary is done by using a new index key and assigning a value to it:
+```py
+# Example : 
+d = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+d["color"] = "red"
+print(d)
+
+#Output : {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'red'}
+```
+
+#### Dictionary Methods
+
+- `clear()`	Removes all the elements from the dictionary  
+```py
+# Example : Remove all elements from the car list:
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.clear()
+print(car)
+
+#Output : { }
+```
+
+- `copy()`	Returns a copy of the dictionary  
+```py
+# Example : Copy the car dictionary:
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.copy()
+print(x)
+
+#Output : {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+```
+
+- `get()`	Returns the value of the specified key  
+```py
+# Example : Get the value of the "model" item:
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.get("model")
+print(x)
+
+#Output : Mustang
+```
+
+- `items()`	Returns a list containing a tuple for each key value pair  
+```py
+# Example : Return the dictionary's key-value pairs:
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.items()
+print(x)
+
+#Output : dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+```
+
+- `keys()`	Returns a list containing the dictionary's keys  
+```py
+# Example : Return the keys:
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.keys()
+print(x)
+
+#Output : dict_keys(['brand', 'model', 'year'])
+```
+
+- `pop()`	Removes the element with the specified key  
+```py
+# Example : Remove "model" from the dictionary:
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.pop("model")
+print(car)
+
+#Output : {'brand': 'Ford', 'year': 1964}
+```
+
+- `update()`	Updates the dictionary with the specified key-value pairs  
+```py
+# Example : Insert an item to the dictionary:
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.update({"color": "White"})
+print(car)
+
+#Output : {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'White'}
+```
+
+- `values()` 	Returns a list of all the values in the dictionary  
+```py
+# Example : Return the values:
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.values()
+print(x)
+
+#Output : dict_values(['Ford', 'Mustang', 1964])
+```
+
+Documentation of Collections in Python is completed
