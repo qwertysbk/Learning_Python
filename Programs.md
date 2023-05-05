@@ -30,3 +30,36 @@ for i in x:
 z = ''.join(y)
 print("Encrypted Code:",z)
 ```
+
+- Guess Random Numbers
+```py
+#Generating Random Numbers and Guessing those numbers by user input
+import random
+def new_rand():
+    z = random.randint(0,100)
+    print(z)
+    return z
+
+def save_rand(r):
+    with open("rand_generated.txt", "w") as f:   # Save the random number to a file
+        f.write(str(r)+"\n")
+
+def key(r):
+    while True:
+        x = int(input("Guess the number between 0 and 100: "))
+        if x == r:
+            save_rand(r)
+            print("Congratulations, you guessed the number!")
+            break
+        elif x > r:
+            print("Your guess is greater than the number.")
+        else:
+            print("Your guess is smaller than the number.")
+
+while True:
+    r = new_rand()
+    key(r)
+    y = input("Do you want to play again? (1/0): ")
+    if y == "0":
+        break
+```
